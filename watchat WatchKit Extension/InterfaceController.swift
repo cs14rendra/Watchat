@@ -27,8 +27,8 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
         
         barcodeImg.setImageNamed("loader")
         barcodeImg.startAnimatingWithImages(
-            in: NSRange(location: 0, length: 11),
-            duration: 1,
+            in: NSRange(location: 0, length: 8),
+            duration: 0.7,
             repeatCount: 0)
         
     }

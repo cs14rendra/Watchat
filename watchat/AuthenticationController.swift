@@ -89,13 +89,18 @@ class ViewController: UIViewController, WCSessionDelegate, WKScriptMessageHandle
     
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         
+        // Get QRCode from messageHandler
         let messageBody = message.body as! String
-        
         let base64URL = URL(string: messageBody)
-        let imageData = try? Data(contentsOf: base64URL!)
+        let blackData = try? Data(contentsOf: base64URL!)
         
-        let barcodeData = ["barcode":imageData]
+        // Convert black QRCode to white so it can be readable
+        // on a black background.
+        let whiteImg = UIImage(data: blackData!)?.invertedImage()
+        let whiteData:Data = UIImagePNGRepresentation(whiteImg!)!
         
+        // Send white QRCode to AppleWatch.
+        let barcodeData = ["barcode":whiteData]
         session = WCSession.default()
         session.sendMessage(barcodeData, replyHandler: nil, errorHandler: nil)
     }
@@ -123,5 +128,19 @@ class ViewController: UIViewController, WCSessionDelegate, WKScriptMessageHandle
     }
 
 
+}
+
+extension UIImage {
+    func invertedImage() -> UIImage? {
+        guard let cgImage = self.cgImage else { return nil }
+        let ciImage = CoreImage.CIImage(cgImage: cgImage)
+        guard let filter = CIFilter(name: "CIColorInvert") else { return nil }
+        filter.setDefaults()
+        filter.setValue(ciImage, forKey: kCIInputImageKey)
+        let context = CIContext(options: nil)
+        guard let outputImage = filter.outputImage else { return nil }
+        guard let outputImageCopy = context.createCGImage(outputImage, from: outputImage.extent) else { return nil }
+        return UIImage(cgImage: outputImageCopy)
+    }
 }
 

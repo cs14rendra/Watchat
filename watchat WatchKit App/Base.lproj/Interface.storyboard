@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="GAe-Wk-PNP">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="GAe-Wk-PNP">
     <device id="watch38" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -14,13 +14,12 @@
             <objects>
                 <controller title="Scan Barcode" id="GAe-Wk-PNP" customClass="InterfaceController" customModule="watchat_WatchKit_Extension">
                     <items>
-                        <imageView width="1" height="120" alignment="center" verticalAlignment="center" id="cgx-Yp-NLF"/>
+                        <imageView width="110" height="110" alignment="center" verticalAlignment="center" id="cgx-Yp-NLF"/>
                         <label width="1" alignment="center" verticalAlignment="center" text="Scan Barcode" textAlignment="center" id="WiK-WR-yZR">
-                            <color key="textColor" red="0.07945281127986048" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <fontDescription key="font" type="system" weight="ultraLight" pointSize="15"/>
                         </label>
                     </items>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
                         <outlet property="barcodeImg" destination="cgx-Yp-NLF" id="8xA-YJ-RT1"/>
                     </connections>
