@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A83F2F421ED5EB3800BEB38E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A83F2F411ED5EB3800BEB38E /* Assets.xcassets */; };
 		A859D4791EBEDE0400D686F6 /* WKScriptMessageHandlerToNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = A859D4781EBEDE0400D686F6 /* WKScriptMessageHandlerToNotification.swift */; };
-		A86005FB1EBF75C40084578D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A86005FA1EBF75C40084578D /* Assets.xcassets */; };
 		A86A74D71EBEB21F0054DC44 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86A74D61EBEB21F0054DC44 /* AppDelegate.swift */; };
 		A86A74D91EBEB21F0054DC44 /* AuthenticationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86A74D81EBEB21F0054DC44 /* AuthenticationController.swift */; };
 		A86A74DC1EBEB21F0054DC44 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A86A74DA1EBEB21F0054DC44 /* Main.storyboard */; };
@@ -85,8 +85,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A83F2F411ED5EB3800BEB38E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A859D4781EBEDE0400D686F6 /* WKScriptMessageHandlerToNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKScriptMessageHandlerToNotification.swift; sourceTree = "<group>"; };
-		A86005FA1EBF75C40084578D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A86A74D31EBEB21F0054DC44 /* watchat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = watchat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A86A74D61EBEB21F0054DC44 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A86A74D81EBEB21F0054DC44 /* AuthenticationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationController.swift; sourceTree = "<group>"; };
@@ -209,7 +209,7 @@
 		A86A74FF1EBEB2200054DC44 /* watchat WatchKit App */ = {
 			isa = PBXGroup;
 			children = (
-				A86005FA1EBF75C40084578D /* Assets.xcassets */,
+				A83F2F411ED5EB3800BEB38E /* Assets.xcassets */,
 				A86A75001EBEB2200054DC44 /* Interface.storyboard */,
 				A86A75051EBEB2200054DC44 /* Info.plist */,
 			);
@@ -446,7 +446,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A86005FB1EBF75C40084578D /* Assets.xcassets in Resources */,
+				A83F2F421ED5EB3800BEB38E /* Assets.xcassets in Resources */,
 				A86A75021EBEB2200054DC44 /* Interface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

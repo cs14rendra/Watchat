@@ -27,10 +27,9 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
         
         barcodeImg.setImageNamed("loader")
         barcodeImg.startAnimatingWithImages(
-            in: NSRange(location: 0, length: 8),
+            in: NSRange(location: 0, length: 15),
             duration: 0.7,
             repeatCount: 0)
-        
     }
     
     override func willActivate() {
