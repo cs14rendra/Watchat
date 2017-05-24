@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A859D4791EBEDE0400D686F6 /* WKScriptMessageHandlerToNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = A859D4781EBEDE0400D686F6 /* WKScriptMessageHandlerToNotification.swift */; };
+		A86005FB1EBF75C40084578D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A86005FA1EBF75C40084578D /* Assets.xcassets */; };
 		A86A74D71EBEB21F0054DC44 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86A74D61EBEB21F0054DC44 /* AppDelegate.swift */; };
-		A86A74D91EBEB21F0054DC44 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86A74D81EBEB21F0054DC44 /* ViewController.swift */; };
+		A86A74D91EBEB21F0054DC44 /* AuthenticationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86A74D81EBEB21F0054DC44 /* AuthenticationController.swift */; };
 		A86A74DC1EBEB21F0054DC44 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A86A74DA1EBEB21F0054DC44 /* Main.storyboard */; };
 		A86A74DE1EBEB21F0054DC44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A86A74DD1EBEB21F0054DC44 /* Assets.xcassets */; };
 		A86A74E11EBEB21F0054DC44 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A86A74DF1EBEB21F0054DC44 /* LaunchScreen.storyboard */; };
@@ -16,12 +18,14 @@
 		A86A74F71EBEB21F0054DC44 /* watchatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86A74F61EBEB21F0054DC44 /* watchatUITests.swift */; };
 		A86A74FC1EBEB2200054DC44 /* watchat WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = A86A74FB1EBEB2200054DC44 /* watchat WatchKit App.app */; };
 		A86A75021EBEB2200054DC44 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A86A75001EBEB2200054DC44 /* Interface.storyboard */; };
-		A86A75041EBEB2200054DC44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A86A75031EBEB2200054DC44 /* Assets.xcassets */; };
 		A86A750B1EBEB2200054DC44 /* watchat WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A86A750A1EBEB2200054DC44 /* watchat WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A86A75121EBEB2200054DC44 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86A75111EBEB2200054DC44 /* InterfaceController.swift */; };
 		A86A75141EBEB2200054DC44 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86A75131EBEB2200054DC44 /* ExtensionDelegate.swift */; };
 		A86A75161EBEB2200054DC44 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86A75151EBEB2200054DC44 /* NotificationController.swift */; };
 		A86A75181EBEB2200054DC44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A86A75171EBEB2200054DC44 /* Assets.xcassets */; };
+		A86A752F1EBEB5160054DC44 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A86A752E1EBEB5160054DC44 /* WebKit.framework */; };
+		A86A75321EBEC63F0054DC44 /* jquery.js in Resources */ = {isa = PBXBuildFile; fileRef = A86A75311EBEC63F0054DC44 /* jquery.js */; };
+		A86A75341EBEC6C40054DC44 /* inject.js in Resources */ = {isa = PBXBuildFile; fileRef = A86A75331EBEC6C40054DC44 /* inject.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,9 +85,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A859D4781EBEDE0400D686F6 /* WKScriptMessageHandlerToNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKScriptMessageHandlerToNotification.swift; sourceTree = "<group>"; };
+		A86005FA1EBF75C40084578D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A86A74D31EBEB21F0054DC44 /* watchat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = watchat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A86A74D61EBEB21F0054DC44 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A86A74D81EBEB21F0054DC44 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A86A74D81EBEB21F0054DC44 /* AuthenticationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationController.swift; sourceTree = "<group>"; };
 		A86A74DB1EBEB21F0054DC44 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A86A74DD1EBEB21F0054DC44 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A86A74E01EBEB21F0054DC44 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -96,7 +102,6 @@
 		A86A74F81EBEB21F0054DC44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A86A74FB1EBEB2200054DC44 /* watchat WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "watchat WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A86A75011EBEB2200054DC44 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
-		A86A75031EBEB2200054DC44 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A86A75051EBEB2200054DC44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A86A750A1EBEB2200054DC44 /* watchat WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "watchat WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A86A75101EBEB2200054DC44 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
@@ -105,6 +110,9 @@
 		A86A75151EBEB2200054DC44 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		A86A75171EBEB2200054DC44 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A86A75191EBEB2200054DC44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A86A752E1EBEB5160054DC44 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		A86A75311EBEC63F0054DC44 /* jquery.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = jquery.js; sourceTree = "<group>"; };
+		A86A75331EBEC6C40054DC44 /* inject.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = inject.js; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +120,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A86A752F1EBEB5160054DC44 /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,6 +151,7 @@
 		A86A74CA1EBEB21F0054DC44 = {
 			isa = PBXGroup;
 			children = (
+				A86A752D1EBEB5160054DC44 /* Frameworks */,
 				A86A74D51EBEB21F0054DC44 /* watchat */,
 				A86A74EA1EBEB21F0054DC44 /* watchatTests */,
 				A86A74F51EBEB21F0054DC44 /* watchatUITests */,
@@ -166,8 +176,10 @@
 		A86A74D51EBEB21F0054DC44 /* watchat */ = {
 			isa = PBXGroup;
 			children = (
+				A8903F691ED4E9F800D8A449 /* Controller */,
+				A86A75301EBEC61A0054DC44 /* Javascript */,
 				A86A74D61EBEB21F0054DC44 /* AppDelegate.swift */,
-				A86A74D81EBEB21F0054DC44 /* ViewController.swift */,
+				A859D4781EBEDE0400D686F6 /* WKScriptMessageHandlerToNotification.swift */,
 				A86A74DA1EBEB21F0054DC44 /* Main.storyboard */,
 				A86A74DD1EBEB21F0054DC44 /* Assets.xcassets */,
 				A86A74DF1EBEB21F0054DC44 /* LaunchScreen.storyboard */,
@@ -197,8 +209,8 @@
 		A86A74FF1EBEB2200054DC44 /* watchat WatchKit App */ = {
 			isa = PBXGroup;
 			children = (
+				A86005FA1EBF75C40084578D /* Assets.xcassets */,
 				A86A75001EBEB2200054DC44 /* Interface.storyboard */,
-				A86A75031EBEB2200054DC44 /* Assets.xcassets */,
 				A86A75051EBEB2200054DC44 /* Info.plist */,
 			);
 			path = "watchat WatchKit App";
@@ -223,6 +235,31 @@
 				A86A75101EBEB2200054DC44 /* PushNotificationPayload.apns */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A86A752D1EBEB5160054DC44 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A86A752E1EBEB5160054DC44 /* WebKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A86A75301EBEC61A0054DC44 /* Javascript */ = {
+			isa = PBXGroup;
+			children = (
+				A86A75311EBEC63F0054DC44 /* jquery.js */,
+				A86A75331EBEC6C40054DC44 /* inject.js */,
+			);
+			name = Javascript;
+			sourceTree = "<group>";
+		};
+		A8903F691ED4E9F800D8A449 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A86A74D81EBEB21F0054DC44 /* AuthenticationController.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -383,8 +420,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A86A75321EBEC63F0054DC44 /* jquery.js in Resources */,
 				A86A74E11EBEB21F0054DC44 /* LaunchScreen.storyboard in Resources */,
 				A86A74DE1EBEB21F0054DC44 /* Assets.xcassets in Resources */,
+				A86A75341EBEC6C40054DC44 /* inject.js in Resources */,
 				A86A74DC1EBEB21F0054DC44 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -407,7 +446,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A86A75041EBEB2200054DC44 /* Assets.xcassets in Resources */,
+				A86005FB1EBF75C40084578D /* Assets.xcassets in Resources */,
 				A86A75021EBEB2200054DC44 /* Interface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -427,8 +466,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A86A74D91EBEB21F0054DC44 /* ViewController.swift in Sources */,
+				A86A74D91EBEB21F0054DC44 /* AuthenticationController.swift in Sources */,
 				A86A74D71EBEB21F0054DC44 /* AppDelegate.swift in Sources */,
+				A859D4791EBEDE0400D686F6 /* WKScriptMessageHandlerToNotification.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -779,6 +819,7 @@
 				A86A751E1EBEB2200054DC44 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A86A75201EBEB2200054DC44 /* Build configuration list for PBXNativeTarget "watchat WatchKit App" */ = {
 			isa = XCConfigurationList;
@@ -787,6 +828,7 @@
 				A86A75221EBEB2200054DC44 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A86A75241EBEB2200054DC44 /* Build configuration list for PBXNativeTarget "watchat" */ = {
 			isa = XCConfigurationList;
@@ -795,6 +837,7 @@
 				A86A75261EBEB2200054DC44 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A86A75271EBEB2200054DC44 /* Build configuration list for PBXNativeTarget "watchatTests" */ = {
 			isa = XCConfigurationList;
@@ -803,6 +846,7 @@
 				A86A75291EBEB2200054DC44 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A86A752A1EBEB2200054DC44 /* Build configuration list for PBXNativeTarget "watchatUITests" */ = {
 			isa = XCConfigurationList;
@@ -811,6 +855,7 @@
 				A86A752C1EBEB2200054DC44 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
