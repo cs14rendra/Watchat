@@ -18,7 +18,7 @@ import WatchConnectivity
 class ViewController: UIViewController, WCSessionDelegate, WKScriptMessageHandler {
     
     var session : WCSession!
-    
+    var backgroundTask: UIBackgroundTaskIdentifier = UIBackgroundTaskInvalid
     
     /// Runs once the AuthenticationController is loaded.
     override func viewDidLoad() {
