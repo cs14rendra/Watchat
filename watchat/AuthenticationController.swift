@@ -15,121 +15,98 @@ import WebKit
 import WatchConnectivity
 
 
-class ViewController: UIViewController, WCSessionDelegate, WKScriptMessageHandler {
+class AuthenticationController: UIViewController, WCSessionDelegate {
     
-    var session : WCSession!
-    var backgroundTask: UIBackgroundTaskIdentifier = UIBackgroundTaskInvalid
+    
+    var count = 0;
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        waSession.delegate = self;
+    }
     
     /// Runs once the AuthenticationController is loaded.
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        if (WCSession.isSupported()) {
-            session = WCSession.default()
-            session.delegate = self;
-            session.activate()
-        }
         
-        
-        webView = WKWebView(frame: .zero, configuration: webConfig())
-        
-        
-        webView.customUserAgent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_4) AppleWebKit/600.7.12 (KHTML, like Gecko) Version/8.0.7 Safari/600.7.12"
-        
-        
-        let myURL = URL(string: "https://web.whatsapp.com")
-        let myRequest = URLRequest(url: myURL!)
-        webView.load(myRequest)
-        view = webView;
     }
-    
-    
-    
-    /// Configuration for a WebKit webView.
-    /// Injects jQuery and Javascript necessary to
-    /// authenticate the user with WhatsappWeb.
-    //
-    /// - Returns: Configuration for WebKit webView.
-    func webConfig() ->WKWebViewConfiguration{
-        
-        let webConfig = WKWebViewConfiguration()
-        let contentController = WKUserContentController()
-        
-        let injectURL:URL! = Bundle.main.url(forResource: "inject", withExtension: "js")
-        var injectJS:String = String()
-        
-        let jqueryURL:URL! = Bundle.main.url(forResource: "jquery", withExtension: "js")
-        var jqueryJS:String = String()
-        
-        do{
-            injectJS = try String(contentsOf: injectURL, encoding: .utf8)
-            jqueryJS = try String(contentsOf: jqueryURL, encoding: .utf8)
-        }
-        catch _{
-            
-        }
-        
-        
-        let injectScript:WKUserScript = WKUserScript(source: injectJS, injectionTime: WKUserScriptInjectionTime.atDocumentEnd, forMainFrameOnly: false)
-        
-        let jqueryScript:WKUserScript = WKUserScript(source: jqueryJS, injectionTime: WKUserScriptInjectionTime.atDocumentEnd, forMainFrameOnly: false)
-        
-        
-        contentController.addUserScript(jqueryScript)
-        contentController.addUserScript(injectScript)
-        
-        contentController.add(self, name: "notification")
-        
-        webConfig.userContentController = contentController;
-        
-        return webConfig;
-    }
-    
-    
-    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        
-        // Get QRCode from messageHandler
-        let messageBody = message.body as! String
-        let base64URL = URL(string: messageBody)
-        let blackData = try? Data(contentsOf: base64URL!)
-        
-        // Convert black QRCode to white so it can be readable
-        // on a black background.
-        let whiteImg = UIImage(data: blackData!)?.invertedImage()
-        let whiteData:Data = UIImagePNGRepresentation(whiteImg!)!
-        
-        // Send white QRCode to AppleWatch.
-        let barcodeData = ["barcode":whiteData]
-        session = WCSession.default()
-        session.sendMessage(barcodeData, replyHandler: nil, errorHandler: nil)
-    }
-    
+   
     
     
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
         
     }
     
+    
     func sessionDidBecomeInactive(_ session: WCSession) {
     }
     
-    func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
-        
-    }
     
     func sessionDidDeactivate(_ session: WCSession) {
         
+    }
+    
+    /**
+     Receive barcode request from AppleWatch.
+     Checks if user is not authenticated and if barcode exists.
+     
+     If user isn't authenticated and barcode exists, it sends a
+     Message dictionary of Type "barcode" to the Watch.
+     If user is authenticated and barcode doesn't exist, a Message
+     dictionary of Type "connection" is sent to the Watch.
+    **/
+    func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
+        
+        print("received " + String(count))
+        count += 1;
+    
+        wView.evaluateJavaScript("getBarcodeX()") { (result, error) in
+            
+            let messageBody = result as AnyObject
+            
+            let connection = messageBody["connection"] as! Bool
+            let msgType =  messageBody["msgType"] as! String
+            let msgData = messageBody["msgData"] as! String
+            
+            if(!connection && msgType == "barcode"){
+                
+                let base64URL = URL(string: msgData)
+                let blackData = try? Data(contentsOf: base64URL!)
+                
+                // Convert black QRCode to white so it can be readable
+                // on a black background.
+                let whiteImg = UIImage(data: blackData!)?.invertedImage()
+                let whiteData:Data = UIImagePNGRepresentation(whiteImg!)!
+                
+                // Send white QRCode to AppleWatch.
+                let barcodeData = ["barcode":whiteData]
+                
+                print("code sent")
+                session.sendMessage(barcodeData, replyHandler: nil, errorHandler: nil)
+            }
+            else{
+                
+                self.dismiss(animated: true, completion: nil)
+                let connectionData = ["connection": connection]
+                session.sendMessage(connectionData, replyHandler: nil, errorHandler: nil)
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
 }
 
+
+/**
+ Inverts the colors of a UIImage.
+ Used specifically to invert the colors of the
+ QRCode to make it scannable on a black background.
+ **/
 extension UIImage {
     func invertedImage() -> UIImage? {
         guard let cgImage = self.cgImage else { return nil }

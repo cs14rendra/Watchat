@@ -22,7 +22,5 @@ class WKScriptMessageHandlerToNotification: NSObject, WKScriptMessageHandler {
         let decodedimage:UIImage = UIImage(data: imageData!)!
         print(decodedimage)
         
-        
-        
     }
 }

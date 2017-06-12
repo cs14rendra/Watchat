@@ -19,13 +19,15 @@
 		A86A74FC1EBEB2200054DC44 /* watchat WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = A86A74FB1EBEB2200054DC44 /* watchat WatchKit App.app */; };
 		A86A75021EBEB2200054DC44 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A86A75001EBEB2200054DC44 /* Interface.storyboard */; };
 		A86A750B1EBEB2200054DC44 /* watchat WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A86A750A1EBEB2200054DC44 /* watchat WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		A86A75121EBEB2200054DC44 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86A75111EBEB2200054DC44 /* InterfaceController.swift */; };
+		A86A75121EBEB2200054DC44 /* WKAuthenticationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86A75111EBEB2200054DC44 /* WKAuthenticationController.swift */; };
 		A86A75141EBEB2200054DC44 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86A75131EBEB2200054DC44 /* ExtensionDelegate.swift */; };
 		A86A75161EBEB2200054DC44 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86A75151EBEB2200054DC44 /* NotificationController.swift */; };
 		A86A75181EBEB2200054DC44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A86A75171EBEB2200054DC44 /* Assets.xcassets */; };
 		A86A752F1EBEB5160054DC44 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A86A752E1EBEB5160054DC44 /* WebKit.framework */; };
 		A86A75321EBEC63F0054DC44 /* jquery.js in Resources */ = {isa = PBXBuildFile; fileRef = A86A75311EBEC63F0054DC44 /* jquery.js */; };
 		A86A75341EBEC6C40054DC44 /* inject.js in Resources */ = {isa = PBXBuildFile; fileRef = A86A75331EBEC6C40054DC44 /* inject.js */; };
+		A8E9441C1EE87C4A009E1547 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E9441B1EE87C4A009E1547 /* SettingsViewController.swift */; };
+		A8E9441E1EE8BFC8009E1547 /* ChatLobbyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E9441D1EE8BFC8009E1547 /* ChatLobbyController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,7 +107,7 @@
 		A86A75051EBEB2200054DC44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A86A750A1EBEB2200054DC44 /* watchat WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "watchat WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A86A75101EBEB2200054DC44 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
-		A86A75111EBEB2200054DC44 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		A86A75111EBEB2200054DC44 /* WKAuthenticationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKAuthenticationController.swift; sourceTree = "<group>"; };
 		A86A75131EBEB2200054DC44 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		A86A75151EBEB2200054DC44 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		A86A75171EBEB2200054DC44 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -113,6 +115,8 @@
 		A86A752E1EBEB5160054DC44 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		A86A75311EBEC63F0054DC44 /* jquery.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = jquery.js; sourceTree = "<group>"; };
 		A86A75331EBEC6C40054DC44 /* inject.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = inject.js; sourceTree = "<group>"; };
+		A8E9441B1EE87C4A009E1547 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		A8E9441D1EE8BFC8009E1547 /* ChatLobbyController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatLobbyController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,9 +223,10 @@
 		A86A750E1EBEB2200054DC44 /* watchat WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				A86A75111EBEB2200054DC44 /* InterfaceController.swift */,
+				A86A75111EBEB2200054DC44 /* WKAuthenticationController.swift */,
 				A86A75131EBEB2200054DC44 /* ExtensionDelegate.swift */,
 				A86A75151EBEB2200054DC44 /* NotificationController.swift */,
+				A8E9441D1EE8BFC8009E1547 /* ChatLobbyController.swift */,
 				A86A75171EBEB2200054DC44 /* Assets.xcassets */,
 				A86A75191EBEB2200054DC44 /* Info.plist */,
 				A86A750F1EBEB2200054DC44 /* Supporting Files */,
@@ -258,6 +263,7 @@
 			isa = PBXGroup;
 			children = (
 				A86A74D81EBEB21F0054DC44 /* AuthenticationController.swift */,
+				A8E9441B1EE87C4A009E1547 /* SettingsViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -367,6 +373,7 @@
 					A86A74D21EBEB21F0054DC44 = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = 7CUUQV97WP;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					A86A74E61EBEB21F0054DC44 = {
@@ -384,11 +391,13 @@
 					A86A74FA1EBEB2200054DC44 = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = 7CUUQV97WP;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					A86A75091EBEB2200054DC44 = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = 7CUUQV97WP;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -469,6 +478,7 @@
 				A86A74D91EBEB21F0054DC44 /* AuthenticationController.swift in Sources */,
 				A86A74D71EBEB21F0054DC44 /* AppDelegate.swift in Sources */,
 				A859D4791EBEDE0400D686F6 /* WKScriptMessageHandlerToNotification.swift in Sources */,
+				A8E9441C1EE87C4A009E1547 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -492,9 +502,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8E9441E1EE8BFC8009E1547 /* ChatLobbyController.swift in Sources */,
 				A86A75161EBEB2200054DC44 /* NotificationController.swift in Sources */,
 				A86A75141EBEB2200054DC44 /* ExtensionDelegate.swift in Sources */,
-				A86A75121EBEB2200054DC44 /* InterfaceController.swift in Sources */,
+				A86A75121EBEB2200054DC44 /* WKAuthenticationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

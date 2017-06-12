@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="GAe-Wk-PNP">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="GAe-Wk-PNP">
     <device id="watch38" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="watchOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="12029"/>
     </dependencies>
     <scenes>
         <!--Scan Barcode-->
         <scene sceneID="RDL-eL-EDD">
             <objects>
-                <controller title="Scan Barcode" id="GAe-Wk-PNP" customClass="InterfaceController" customModule="watchat_WatchKit_Extension">
+                <controller identifier="scanCode" title="Scan Barcode" id="GAe-Wk-PNP" customClass="WKAuthenticationController" customModule="watchat_WatchKit_Extension">
                     <items>
                         <imageView width="110" height="110" alignment="center" verticalAlignment="center" id="cgx-Yp-NLF"/>
                         <label width="1" alignment="center" verticalAlignment="center" text="Scan Barcode" textAlignment="center" id="WiK-WR-yZR">
@@ -22,10 +22,18 @@
                     </items>
                     <connections>
                         <outlet property="barcodeImg" destination="cgx-Yp-NLF" id="8xA-YJ-RT1"/>
+                        <outlet property="lbl" destination="WiK-WR-yZR" id="C11-Bn-bym"/>
                     </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="220" y="349"/>
+        </scene>
+        <!--Chat Lobby-->
+        <scene sceneID="kAR-rA-jq8">
+            <objects>
+                <controller identifier="chatLobby" title="Chat Lobby" id="zKG-ll-Q1c" customClass="ChatLobbyController" customModule="watchat_WatchKit_Extension"/>
+            </objects>
+            <point key="canvasLocation" x="445" y="349"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">

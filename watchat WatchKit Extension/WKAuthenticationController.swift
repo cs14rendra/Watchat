@@ -1,5 +1,5 @@
 //
-//  InterfaceController.swift
+//  WKAuthenticationController.swift
 //  watchat WatchKit Extension
 //
 //  Created by Omar Dlhz on 5/6/17.
@@ -11,14 +11,15 @@ import Foundation
 import WatchConnectivity
 
 
-
-class InterfaceController: WKInterfaceController, WCSessionDelegate {
+class WKAuthenticationController: WKInterfaceController, WCSessionDelegate {
     @IBOutlet var barcodeImg: WKInterfaceImage!
     
+    @IBOutlet var lbl: WKInterfaceLabel!
     var session : WCSession!
     var status = false;
     
     var count = 0;
+    var repeatTimer:Timer!
 
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
@@ -43,6 +44,28 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
         }
     }
     
+    /**
+     Once the WKAuthenticationController appears, request QRCodes
+     to the iOS app and repeat every 20 seconds (interval in which
+     WhatsApp web generates new QRCodes).
+    **/
+    override func didAppear() {
+        
+        // Gets the first QRCode.
+        getQRCode()
+        
+        // Repeats the QRCode request every 20 seconds.
+        repeatTimer = Timer.scheduledTimer(timeInterval: 20, target: self, selector: #selector(getQRCode), userInfo: nil, repeats: true)
+    }
+    
+    /**
+     Sends message requesting QRCode from iOS app in AuthenticationController.
+    **/
+    func getQRCode(){
+        
+        session.sendMessage(["message":"Text" as Any], replyHandler: nil, errorHandler: nil)
+    }
+    
     
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
         
@@ -55,6 +78,13 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
             
             let image = UIImage(data: barcode)
             barcodeImg.setImage(image)
+        }
+        
+        
+        if let connection = message["connection"] as? Bool{
+            
+            repeatTimer.invalidate();
+            presentController(withName: "chatLobby", context: nil)
         }
         
     }
